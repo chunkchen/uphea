@@ -1,0 +1,1 @@
+<div class="msg msg_error msg_show">Vote has been lost!<br/>Please, reload page and answer again.</div>

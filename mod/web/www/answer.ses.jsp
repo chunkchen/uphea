@@ -1,0 +1,1 @@
+<div class="msg msg_error msg_show">Question can be answered<br/>only by singed users!</div>

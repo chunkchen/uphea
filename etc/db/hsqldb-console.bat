@@ -1,0 +1,1 @@
+java -classpath d:\projects\java\apps\uphea\lib\hsqldb\hsqldb-2.2.6.jar org.hsqldb.util.DatabaseManager -user sa -password sa! -url jdbc:hsqldb:file:/d:/projects/java/apps/uphea/work/db/upheadb

@@ -1,0 +1,6 @@
+
+# total number of elements
+imageCache.size=100
+
+# max file size = 100 k
+imageCache.maxFileSize=102400

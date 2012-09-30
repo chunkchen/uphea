@@ -1,0 +1,12 @@
+
+# document root
+appData.docRoot=${upheaDir}
+
+# images root
+appData.imgRoot=${appData.docRoot}/img
+
+# email root
+appData.emailRoot=${appData.docRoot}/email
+
+# site url
+appData.siteUrl=http://uphea.com

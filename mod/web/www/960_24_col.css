@@ -1,0 +1,569 @@
+/* 960 Grid System ~ Core CSS.*/
+
+/* Container >> 24 Columns
+----------------------------------------------------------------------------------------------------*/
+.c24 {
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+}
+
+/* Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+.g1,
+.g2,
+.g3,
+.g4,
+.g5,
+.g6,
+.g7,
+.g8,
+.g9,
+.g10,
+.g11,
+.g12,
+.g13,
+.g14,
+.g15,
+.g16,
+.g17,
+.g18,
+.g19,
+.g20,
+.g21,
+.g22,
+.g23,
+.g24 {
+	display: inline;
+	float: left;
+	position: relative;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/* Grid >> Children (Alpha ~ First, Omega ~ Last)
+----------------------------------------------------------------------------------------------------*/
+
+.alpha {
+	margin-left: 0;
+}
+
+.omega {
+	margin-right: 0;
+}
+
+/* Grid >> 24 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.g1 {
+	width: 30px;
+}
+
+.g2 {
+	width: 70px;
+}
+
+.g3 {
+	width: 110px;
+}
+
+.g4 {
+	width: 150px;
+}
+
+.g5 {
+	width: 190px;
+}
+
+.g6 {
+	width: 230px;
+}
+
+.g7 {
+	width: 270px;
+}
+
+.g8 {
+	width: 310px;
+}
+
+.g9 {
+	width: 350px;
+}
+
+.g10 {
+	width: 390px;
+}
+
+.g11 {
+	width: 430px;
+}
+
+.g12 {
+	width: 470px;
+}
+
+.g13 {
+	width: 510px;
+}
+
+.g14 {
+	width: 550px;
+}
+
+.g15 {
+	width: 590px;
+}
+
+.g16 {
+	width: 630px;
+}
+
+.g17 {
+	width: 670px;
+}
+
+.g18 {
+	width: 710px;
+}
+
+.g19 {
+	width: 750px;
+}
+
+.g20 {
+	width: 790px;
+}
+
+.g21 {
+	width: 830px;
+}
+
+.g22 {
+	width: 870px;
+}
+
+.g23 {
+	width: 910px;
+}
+
+.g24 {
+	width: 950px;
+}
+
+/* Prefix Extra Space >> 24 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.pre1 {
+	padding-left: 40px;
+}
+
+.pre2 {
+	padding-left: 80px;
+}
+
+.pre3 {
+	padding-left: 120px;
+}
+
+.pre4 {
+	padding-left: 160px;
+}
+
+.pre5 {
+	padding-left: 200px;
+}
+
+.pre6 {
+	padding-left: 240px;
+}
+
+.pre7 {
+	padding-left: 280px;
+}
+
+.pre8 {
+	padding-left: 320px;
+}
+
+.pre9 {
+	padding-left: 360px;
+}
+
+.pre10 {
+	padding-left: 400px;
+}
+
+.pre11 {
+	padding-left: 440px;
+}
+
+.pre12 {
+	padding-left: 480px;
+}
+
+.pre13 {
+	padding-left: 520px;
+}
+
+.pre14 {
+	padding-left: 560px;
+}
+
+.pre15 {
+	padding-left: 600px;
+}
+
+.pre16 {
+	padding-left: 640px;
+}
+
+.pre17 {
+	padding-left: 680px;
+}
+
+.pre18 {
+	padding-left: 720px;
+}
+
+.pre19 {
+	padding-left: 760px;
+}
+
+.pre20 {
+	padding-left: 800px;
+}
+
+.pre21 {
+	padding-left: 840px;
+}
+
+.pre22 {
+	padding-left: 880px;
+}
+
+.pre23 {
+	padding-left: 920px;
+}
+
+/* Suffix Extra Space >> 24 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.suf1 {
+	padding-right: 40px;
+}
+
+.suf2 {
+	padding-right: 80px;
+}
+
+.suf3 {
+	padding-right: 120px;
+}
+
+.suf4 {
+	padding-right: 160px;
+}
+
+.suf5 {
+	padding-right: 200px;
+}
+
+.suf6 {
+	padding-right: 240px;
+}
+
+.suf7 {
+	padding-right: 280px;
+}
+
+.suf8 {
+	padding-right: 320px;
+}
+
+.suf9 {
+	padding-right: 360px;
+}
+
+.suf10 {
+	padding-right: 400px;
+}
+
+.suf11 {
+	padding-right: 440px;
+}
+
+.suf12 {
+	padding-right: 480px;
+}
+
+.suf13 {
+	padding-right: 520px;
+}
+
+.suf14 {
+	padding-right: 560px;
+}
+
+.suf15 {
+	padding-right: 600px;
+}
+
+.suf16 {
+	padding-right: 640px;
+}
+
+.suf17 {
+	padding-right: 680px;
+}
+
+.suf18 {
+	padding-right: 720px;
+}
+
+.suf19 {
+	padding-right: 760px;
+}
+
+.suf20 {
+	padding-right: 800px;
+}
+
+.suf21 {
+	padding-right: 840px;
+}
+
+.suf22 {
+	padding-right: 880px;
+}
+
+.suf23 {
+	padding-right: 920px;
+}
+
+/* Push Space >> 24 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.push1 {
+	left: 40px;
+}
+
+.push2 {
+	left: 80px;
+}
+
+.push3 {
+	left: 120px;
+}
+
+.push4 {
+	left: 160px;
+}
+
+.push5 {
+	left: 200px;
+}
+
+.push6 {
+	left: 240px;
+}
+
+.push7 {
+	left: 280px;
+}
+
+.push8 {
+	left: 320px;
+}
+
+.push9 {
+	left: 360px;
+}
+
+.push10 {
+	left: 400px;
+}
+
+.push11 {
+	left: 440px;
+}
+
+.push12 {
+	left: 480px;
+}
+
+.push13 {
+	left: 520px;
+}
+
+.push14 {
+	left: 560px;
+}
+
+.push15 {
+	left: 600px;
+}
+
+.push16 {
+	left: 640px;
+}
+
+.push17 {
+	left: 680px;
+}
+
+.push18 {
+	left: 720px;
+}
+
+.push19 {
+	left: 760px;
+}
+
+.push20 {
+	left: 800px;
+}
+
+.push21 {
+	left: 840px;
+}
+
+.push22 {
+	left: 880px;
+}
+
+.push23 {
+	left: 920px;
+}
+
+/* Pull Space >> 24 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.pull1 {
+	left: -40px;
+}
+
+.pull2 {
+	left: -80px;
+}
+
+.pull3 {
+	left: -120px;
+}
+
+.pull4 {
+	left: -160px;
+}
+
+.pull5 {
+	left: -200px;
+}
+
+.pull6 {
+	left: -240px;
+}
+
+.pull7 {
+	left: -280px;
+}
+
+.pull8 {
+	left: -320px;
+}
+
+.pull9 {
+	left: -360px;
+}
+
+.pull10 {
+	left: -400px;
+}
+
+.pull11 {
+	left: -440px;
+}
+
+.pull12 {
+	left: -480px;
+}
+
+.pull13 {
+	left: -520px;
+}
+
+.pull14 {
+	left: -560px;
+}
+
+.pull15 {
+	left: -600px;
+}
+
+.pull16 {
+	left: -640px;
+}
+
+.pull17 {
+	left: -680px;
+}
+
+.pull18 {
+	left: -720px;
+}
+
+.pull19 {
+	left: -760px;
+}
+
+.pull20 {
+	left: -800px;
+}
+
+.pull21 {
+	left: -840px;
+}
+
+.pull22 {
+	left: -880px;
+}
+
+.pull23 {
+	left: -920px;
+}
+
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* http://perishablepress.com/press/2009/12/06/new-clearfix-hack */
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/*
+	The following zoom:1 rule is specifically for IE6 + IE7.
+	Move to separate stylesheet if invalid CSS is a problem.
+*/
+* html .clearfix,
+*:first-child+html .clearfix {
+	zoom: 1;
+}

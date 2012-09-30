@@ -1,0 +1,2 @@
+<%@ taglib prefix="jfn" uri="/joddfn" %>
+${jfn:initPage(pageContext)}

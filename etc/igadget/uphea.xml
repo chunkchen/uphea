@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+	<ModulePrefs
+			title="uphea.com | the nice way of asking smart questions"
+			title_url="http://www.uphea.com"
+			author="Igor Spasic"
+			author_email="igor@jodd.org"
+			author_affiliation="jodd.org"
+			description="questions about... everything!"
+			thumbnail="http://uphea.com/gfx/uphea-thumbnail.png">
+		<Require feature="dynamic-height"/>
+	</ModulePrefs>
+	<Content type="html">
+<![CDATA[
+<div id="uphea_h">Uphea question for today:</div>
+<div id="content"></div>
+<style type="text/css">
+#uphea_h {text-align:center; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 12px;}
+#uphea_q {text-align:center; font-size:20px; line-height:100%; font-family:Georgia, "Times New Roman", Times, serif; font-weight:bold; color: #666; padding: 10px 0 12px 0;
+
+#uphea_ans	{text-align:center;}
+.uphea_a 	{font-family: Georgia, "Times New Roman", Times, serif; font-weight:bold; font-size: 15px; border: 1px solid red;}
+</style>
+
+<script type="text/javascript">
+
+function makeJSONRequest() {
+	var params = {};
+	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+	var url = "http://uphea.com/json/question";
+	gadgets.io.makeRequest(url, response, params);
+};
+
+function response(obj) {
+	var d = obj.data;
+	var html = "";
+
+	html += "<div id='uphea_q'>" + d.question + "</div>";
+	html += "<div id='uphea_ans'>";
+	for (var key in d.answers) {
+		html += "<a href='http://uphea.com' target='_blank'><div class='uphea_a'>" + d.answers[key] + "</div></a>";
+	}
+	html += "</div>";
+
+	document.getElementById('content').innerHTML = html;
+	gadgets.window.adjustHeight();
+};
+
+gadgets.util.registerOnLoadHandler(makeJSONRequest);
+</script>
+]]>
+	</Content>
+</Module>

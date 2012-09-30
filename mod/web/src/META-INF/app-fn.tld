@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+	<description>App JSP functions library</description>
+	<tlib-version>1.1</tlib-version>
+	<short-name>appfn</short-name>
+	<uri>/appfn</uri>
+
+	<function>
+		<name>question2html</name>
+		<function-class>com.uphea.jsp.Format</function-class>
+		<function-signature>java.lang.String questionToHtml(com.uphea.domain.Question)</function-signature>
+	</function>
+
+	<function>
+		<name>txt2html</name>
+		<function-class>com.uphea.jsp.Format</function-class>
+		<function-signature>java.lang.String textToHtml(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>txtPlain</name>
+		<function-class>com.uphea.jsp.Format</function-class>
+		<function-signature>java.lang.String textPlain(java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>fmtDate</name>
+		<function-class>com.uphea.jsp.Format</function-class>
+		<function-signature>java.lang.String fmtDate(jodd.datetime.JDateTime)</function-signature>
+	</function>
+
+	<function>
+		<name>fmtIntDate</name>
+		<function-class>com.uphea.jsp.Format</function-class>
+		<function-signature>java.lang.String fmtIntDate(int)</function-signature>
+	</function>
+
+	<function>
+		<name>fixedFloat</name>
+		<function-class>com.uphea.jsp.Format</function-class>
+		<function-signature>java.lang.String fixedFloat(int)</function-signature>
+	</function>
+
+	<function>
+		<name>urlQuestion</name>
+		<function-class>com.uphea.jsp.UrlFunctions</function-class>
+		<function-signature>java.lang.String urlQuestionForDate(com.uphea.domain.Question)</function-signature>
+	</function>
+
+</taglib>

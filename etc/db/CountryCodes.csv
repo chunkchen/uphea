@@ -1,0 +1,246 @@
+"Belarus",BY,BLR,112
+"Philippines",PH,PHL,608
+"Morocco",MA,MAR,504
+"Kyrgyzstan",KG,KGZ,417
+"Afghanistan",AF,AFG,004
+"Nicaragua",NI,NIC,558
+"France",FR,FRA,250
+"Haiti",HT,HTI,332
+"Taiwan, Province of China",TW,TWN,158
+"Puerto Rico",PR,PRI,630
+"Cape Verde",CV,CPV,132
+"Djibouti",DJ,DJI,262
+"Cayman Islands",KY,CYM,136
+"Latvia",LV,LVA,428
+"Bangladesh",BD,BGD,050
+"Bosnia and Herzegovina",BA,BIH,070
+"Bouvet Island",BV,BVT,074
+"Panama",PA,PAN,591
+"Falkland Islands (Malvinas)",FK,FLK,238
+"Syrian Arab Republic",SY,SYR,760
+"Uzbekistan",UZ,UZB,860
+"Burundi",BI,BDI,108
+"Guyana",GY,GUY,328
+"Kiribati",KI,KIR,296
+"Mexico",MX,MEX,484
+"Canada",CA,CAN,124
+"Marshall Islands",MH,MHL,584
+"Iceland",IS,ISL,352
+"Guadeloupe",GP,GLP,312
+"Barbados",BB,BRB,052
+"Lebanon",LB,LBN,422
+"Lesotho",LS,LSO,426
+"Norfolk Island",NF,NFK,574
+"Reunion",RE,REU,638
+"El Salvador",SV,SLV,222
+"Liechtenstein",LI,LIE,438
+"Macao",MO,MAC,446
+"Virgin Islands, British",VG,VGB,092
+"Saint Pierre and Miquelon",PM,SPM,666
+"Saint Martin (French part)",MF,MAF,663
+"Central African Republic",CF,CAF,140
+"Congo, the Democratic Republic of the",CD,COD,180
+"Slovenia",SI,SVN,705
+"Montserrat",MS,MSR,500
+"Burkina Faso",BF,BFA,854
+"Mongolia",MN,MNG,496
+"Guatemala",GT,GTM,320
+"British Indian Ocean Territory",IO,IOT,086
+"Timor-Leste",TL,TLS,626
+"Egypt",EG,EGY,818
+"French Southern Territories",TF,ATF,260
+"New Zealand",NZ,NZL,554
+"Angola",AO,AGO,024
+"Palestinian Territory, Occupied",PS,PSE,275
+"Slovakia",SK,SVK,703
+"Saint Helena",SH,SHN,654
+"Greece",GR,GRC,300
+"Maldives",MV,MDV,462
+"Thailand",TH,THA,764
+"Ukraine",UA,UKR,804
+"Pitcairn",PN,PCN,612
+"Tonga",TO,TON,776
+"Iraq",IQ,IRQ,368
+"Italy",IT,ITA,380
+"Christmas Island",CX,CXR,162
+"Moldova",MD,MDA,498
+"Papua New Guinea",PG,PNG,598
+"Guinea",GN,GIN,324
+"Cyprus",CY,CYP,196
+"Denmark",DK,DNK,208
+"Kuwait",KW,KWT,414
+"Cocos (Keeling) Islands",CC,CCK,166
+"Wallis and Futuna",WF,WLF,876
+"Ghana",GH,GHA,288
+"Pakistan",PK,PAK,586
+"Cook Islands",CK,COK,184
+"Gabon",GA,GAB,266
+"Saint Barthelemy",BL,BLM,652
+"Montenegro",ME,MNE,499
+"Armenia",AM,ARM,051
+"Equatorial Guinea",GQ,GNQ,226
+"Croatia",HR,HRV,191
+"Guernsey",GG,GGY,831
+"Cameroon",CM,CMR,120
+"Cote d'Ivoire",CI,CIV,384
+"Zimbabwe",ZW,ZWE,716
+"Sweden",SE,SWE,752
+"Serbia",RS,SRB,688
+"Estonia",EE,EST,233
+"Nigeria",NG,NGA,566
+"Martinique",MQ,MTQ,474
+"Saint Vincent and the Grenadines",VC,VCT,670
+"Mayotte",YT,MYT,175
+"Bolivia",BO,BOL,068
+"Solomon Islands",SB,SLB,090
+"Liberia",LR,LBR,430
+"Turkmenistan",TM,TKM,795
+"Turks and Caicos Islands",TC,TCA,796
+"Kenya",KE,KEN,404
+"French Polynesia",PF,PYF,258
+"Peru",PE,PER,604
+"Dominica",DM,DMA,212
+"Malawi",MW,MWI,454
+"Tunisia",TN,TUN,788
+"Sao Tome and Principe",ST,STP,678
+"China",CN,CHN,156
+"Gambia",GM,GMB,270
+"South Georgia and the South Sandwich Islands",GS,SGS,239
+"Uganda",UG,UGA,800
+"Togo",TG,TGO,768
+"Seychelles",SC,SYC,690
+"Sudan",SD,SDN,736
+"Malta",MT,MLT,470
+"Bahamas",BS,BHS,044
+"Cambodia",KH,KHM,116
+"Trinidad and Tobago",TT,TTO,780
+"Zambia",ZM,ZMB,894
+"Belgium",BE,BEL,056
+"Anguilla",AI,AIA,660
+"Iran, Islamic Republic of",IR,IRN,364
+"Dominican Republic",DO,DOM,214
+"Congo",CG,COG,178
+"Portugal",PT,PRT,620
+"Tanzania, United Republic of",TZ,TZA,834
+"Hong Kong",HK,HKG,344
+"Mali",ML,MLI,466
+"Ecuador",EC,ECU,218
+"Indonesia",ID,IDN,360
+"Lao People's Democratic Republic",LA,LAO,418
+"Luxembourg",LU,LUX,442
+"Chile",CL,CHL,152
+"Libyan Arab Jamahiriya",LY,LBY,434
+"Bahrain",BH,BHR,048
+"Macedonia, the former Yugoslav Republic of",MK,MKD,807
+"Fiji",FJ,FJI,242
+"Niue",NU,NIU,570
+"Sierra Leone",SL,SLE,694
+"Samoa",WS,WSM,882
+"Micronesia, Federated States of",FM,FSM,583
+"Korea, Democratic People's Republic of",KP,PRK,408
+"Oman",OM,OMN,512
+"Turkey",TR,TUR,792
+"United States Minor Outlying Islands",UM,UMI,581
+"Niger",NE,NER,562
+"Netherlands Antilles",AN,ANT,530
+"Czech Republic",CZ,CZE,203
+"Chad",TD,TCD,148
+"Guam",GU,GUM,316
+"Mozambique",MZ,MOZ,508
+"Benin",BJ,BEN,204
+"Romania",RO,ROU,642
+"French Guiana",GF,GUF,254
+"Algeria",DZ,DZA,012
+"Madagascar",MG,MDG,450
+"United States",US,USA,840
+"Belize",BZ,BLZ,084
+"Comoros",KM,COM,174
+"Saudi Arabia",SA,SAU,682
+"Paraguay",PY,PRY,600
+"Ireland",IE,IRL,372
+"Russian Federation",RU,RUS,643
+"Colombia",CO,COL,170
+"Switzerland",CH,CHE,756
+"Yemen",YE,YEM,887
+"Vanuatu",VU,VUT,548
+"Malaysia",MY,MYS,458
+"Aruba",AW,ABW,533
+"South Africa",ZA,ZAF,710
+"Albania",AL,ALB,008
+"San Marino",SM,SMR,674
+"Austria",AT,AUT,040
+"American Samoa",AS,ASM,016
+"Monaco",MC,MCO,492
+"Mauritania",MR,MRT,478
+"Bermuda",BM,BMU,060
+"Hungary",HU,HUN,348
+"Antarctica",AQ,ATA,010
+"Mauritius",MU,MUS,480
+"Argentina",AR,ARG,032
+"Poland",PL,POL,616
+"Tokelau",TK,TKL,772
+"Georgia",GE,GEO,268
+"Bulgaria",BG,BGR,100
+"Germany",DE,DEU,276
+"Norway",NO,NOR,578
+"Japan",JP,JPN,392
+"United Arab Emirates",AE,ARE,784
+"Cuba",CU,CUB,192
+"Nauru",NR,NRU,520
+"Costa Rica",CR,CRI,188
+"Tajikistan",TJ,TJK,762
+"Holy See (Vatican City State)",VA,VAT,336
+"Sri Lanka",LK,LKA,144
+"India",IN,IND,356
+"Greenland",GL,GRL,304
+"Senegal",SN,SEN,686
+"Jordan",JO,JOR,400
+"Eritrea",ER,ERI,232
+"Namibia",NA,NAM,516
+"Korea, Republic of",KR,KOR,410
+"Myanmar",MM,MMR,104
+"Uruguay",UY,URY,858
+"Andorra",AD,AND,020
+"Saint Kitts and Nevis",KN,KNA,659
+"Rwanda",RW,RWA,646
+"Saint Lucia",LC,LCA,662
+"Faroe Islands",FO,FRO,234
+"Swaziland",SZ,SWZ,748
+"Jersey",JE,JEY,832
+"Brazil",BR,BRA,076
+"Venezuela",VE,VEN,862
+"Western Sahara",EH,ESH,732
+"Qatar",QA,QAT,634
+"Tuvalu",TV,TUV,798
+"Spain",ES,ESP,724
+"Aland Islands",AX,ALA,248
+"Palau",PW,PLW,585
+"Bhutan",BT,BTN,064
+"Israel",IL,ISR,376
+"Brunei Darussalam",BN,BRN,096
+"Azerbaijan",AZ,AZE,031
+"Nepal",NP,NPL,524
+"Ethiopia",ET,ETH,231
+"Honduras",HN,HND,340
+"Svalbard and Jan Mayen",SJ,SJM,744
+"Viet Nam",VN,VNM,704
+"Australia",AU,AUS,036
+"Heard Island and McDonald Islands",HM,HMD,334
+"Northern Mariana Islands",MP,MNP,580
+"Netherlands",NL,NLD,528
+"Gibraltar",GI,GIB,292
+"Somalia",SO,SOM,706
+"New Caledonia",NC,NCL,540
+"Antigua and Barbuda",AG,ATG,028
+"Isle of Man",IM,IMN,833
+"Finland",FI,FIN,246
+"Lithuania",LT,LTU,440
+"Suriname",SR,SUR,740
+"Jamaica",JM,JAM,388
+"United Kingdom",GB,GBR,826
+"Grenada",GD,GRD,308
+"Virgin Islands, U.S.",VI,VIR,850
+"Singapore",SG,SGP,702
+"Guinea-Bissau",GW,GNB,624
+"Botswana",BW,BWA,072
+"Kazakhstan",KZ,KAZ,398

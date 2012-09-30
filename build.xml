@@ -1,0 +1,318 @@
+<project name="Uphea" default="help" basedir=".">
+
+	<description>Uphea - the art of asking questions</description>
+
+	<!-- ensure that Ant 1.6.2+ is being used -->
+	<available classname="org.apache.tools.ant.DynamicAttribute" property="ant-1.6.2"/>
+	<fail unless="ant-1.6.2" message="Ant 1.6.2+ is required."/>
+
+	<property environment="env"/>
+
+	<tstamp>
+		<format property="TODAY" pattern="yyyy-MM-dd"/>
+		<format property="time.now" pattern="yyyy-MM-dd hh:mm:ss"/>
+		<format property="time.year" pattern="yyyy"/>
+	</tstamp>
+
+	<fail message="Missing build.user.properties.">
+		<condition>
+			<not>
+				<available file="build.user.properties"/>
+			</not>
+		</condition>
+	</fail>
+
+	<!-- project data -->
+	
+	<property file="build.user.properties"/>
+	<property file="build.properties"/>
+	
+	<property name="prjName" value="Uphea"/>
+	<property name="prjId" value="uphea"/>
+	<property name="prjVersion" value="1.0.0"/>
+
+	<echo/>
+	<echo>${prjName} ${prjVersion}</echo>
+	<echo>Uphea - the art of asking questions</echo>
+	<echo></echo>
+	<echo>built on: ${TODAY}</echo>
+	<echo>built using ${ant.version}</echo>
+	<echo>ant runs on java ${ant.java.version}</echo>
+	<echo/>
+
+	<patternset id="ignored.files">
+		<exclude name="**/CVS/**"/>
+		<exclude name="**/.svn/**"/>
+		<exclude name="**/*.bat"/>
+		<exclude name="**/*.py"/>
+		<exclude name="**/*.flex"/>
+		<exclude name="**/*.template"/>
+	</patternset>
+	<patternset id="resources">
+		<exclude name="**/*.java"/>
+		<exclude name="**/package.html"/>
+		<patternset refid="ignored.files"/>
+	</patternset>
+
+	<property name="jdk.bin" value="${jdk.home}/bin"/>
+	<path id="jdk.classpath">
+		<fileset dir="${jdk.home}">
+			<include name="jre/lib/charsets.jar"/>
+			<include name="jre/lib/deploy.jar"/>
+			<include name="jre/lib/javaws.jar"/>
+			<include name="jre/lib/jce.jar"/>
+			<include name="jre/lib/jsse.jar"/>
+			<include name="jre/lib/plugin.jar"/>
+			<include name="jre/lib/rt.jar"/>
+			<include name="jre/lib/ext/dnsns.jar"/>
+			<include name="jre/lib/ext/localedata.jar"/>
+			<include name="jre/lib/ext/sunjce_provider.jar"/>
+			<include name="jre/lib/ext/sunpkcs11.jar"/>
+		</fileset>
+	</path>
+	<path id="jdk.tools">
+		<fileset dir="${jdk.home}">
+			<include name="lib/tools.jar"/>
+		</fileset>
+	</path>
+
+	<property name="output.dir" value="out"/>
+	<property name="mod.dir" value="mod"/>
+	<property name="dist.dir" value="dist"/>
+	<property name="etc.dir" value="etc"/>
+	<property name="tmp.dir" value="tmp"/>
+
+	<fileset id="lib.jodd.fileset" dir="${basedir}/lib/jodd" includes="**/*.jar"/>
+	<path id="lib.jodd">
+		<fileset refid="lib.jodd.fileset"/>
+	</path>
+	<fileset id="lib.log.fileset" dir="${basedir}/lib/log" includes="**/*.jar"/>
+	<path id="lib.log">
+		<fileset refid="lib.log.fileset"/>
+	</path>
+	<fileset id="lib.mail.fileset" dir="${basedir}/lib/mail" includes="**/*.jar"/>
+	<path id="lib.mail">
+		<fileset refid="lib.mail.fileset"/>
+	</path>
+	<fileset id="lib.servlet.fileset" dir="${basedir}/lib/servlet" includes="**/*.jar"/>
+	<path id="lib.servlet">
+		<fileset refid="lib.servlet.fileset"/>
+	</path>
+	<fileset id="lib.test.fileset" dir="${basedir}/lib/test" includes="**/*.jar"/>
+	<path id="lib.test">
+		<fileset refid="lib.test.fileset"/>
+	</path>
+	<fileset id="lib.web.fileset" dir="${basedir}/lib/web" includes="**/*.jar"/>
+	<path id="lib.web">
+		<fileset refid="lib.web.fileset"/>
+	</path>
+	<fileset id="lib.hsqldb.fileset" dir="${basedir}/lib/hsqldb" includes="**/*.jar"/>
+	<path id="lib.hsqldb">
+		<fileset refid="lib.hsqldb.fileset"/>
+	</path>
+
+	<!-- MODULE : app -->
+
+	<path id="app.src.classpath">
+		<path refid="lib.jodd"/>
+		<path refid="lib.log"/>
+		<path refid="lib.mail"/>
+	</path>
+
+	<!-- compile: app.src -->
+
+	<path id="app.src.bootclasspath">
+		<path refid="jdk.classpath"/>
+		<path refid="jdk.tools"/>
+	</path>
+
+	<property name="app.src.out-dir" value="${output.dir}/classes/app.src"/>
+	<property name="app.src.src-dir" value="${mod.dir}/app/src"/>
+
+	<target name="compile.app.src" description="  compile app.src">
+		<mkdir dir="${app.src.out-dir}"/>
+		<touch file="${output.dir}/app.src"/>
+		<javac destdir="${app.src.out-dir}"
+				listfiles="on" debug="on"
+				source="1.6" target="1.6"
+				deprecation="true" encoding="UTF-8" includeantruntime="false"
+				fork="true" executable="${jdk.bin}/javac">
+			<src location="${app.src.src-dir}"/>
+			<bootclasspath refid="app.src.bootclasspath"/>
+			<classpath refid="app.src.classpath"/>
+		</javac>
+		<copy todir="${app.src.out-dir}">
+			<fileset dir="${app.src.src-dir}">
+				<patternset refid="resources"/>
+				<type type="file"/>
+			</fileset>
+		</copy>
+	</target>
+	<target name="build.app" depends="compile.app.src" description="+ build app"/>
+
+	<!-- jar: uphea-app -->
+	<property name="uphea-app.jar" value="${dist.dir}/uphea-app-${prjVersion}.jar"/>
+
+	<target name="jar.uphea-app" depends="compile.app.src">
+		<mkdir dir="${dist.dir}"/>
+		<jar jarfile="${uphea-app.jar}" compress="true">
+			<manifest>
+				<attribute name="Debug-Info" value="on"/>
+				<attribute name="Release-Date" value="${TODAY}"/>
+				<attribute name="Implementation-Title" value="${prjName} uphea-app"/>
+				<attribute name="Implementation-Version" value="${prjVersion}"/>
+			</manifest>
+			<fileset dir="${app.src.out-dir}"/>
+		</jar>
+	</target>
+
+	<target name="dist.app" depends="jar.uphea-app" description="+ dist module"/>
+
+	<!-- MODULE : web -->
+
+	<path id="web.src.classpath">
+		<path path="${app.src.out-dir}"/>
+		<path refid="lib.jodd"/>
+		<path refid="lib.log"/>
+		<path refid="lib.servlet"/>
+		<path refid="lib.web"/>
+	</path>
+
+	<!-- compile: web.src -->
+
+	<path id="web.src.bootclasspath">
+		<path refid="jdk.classpath"/>
+		<path refid="jdk.tools"/>
+	</path>
+
+	<property name="web.src.out-dir" value="${output.dir}/classes/web.src"/>
+	<property name="web.src.src-dir" value="${mod.dir}/web/src"/>
+
+	<target name="compile.web.src" description="  compile web.src">
+		<mkdir dir="${web.src.out-dir}"/>
+		<touch file="${output.dir}/web.src"/>
+		<javac destdir="${web.src.out-dir}"
+				listfiles="on" debug="on"
+				source="1.6" target="1.6"
+				deprecation="true" encoding="UTF-8" includeantruntime="false"
+				fork="true" executable="${jdk.bin}/javac">
+			<src location="${web.src.src-dir}"/>
+			<bootclasspath refid="web.src.bootclasspath"/>
+			<classpath refid="web.src.classpath"/>
+		</javac>
+		<copy todir="${web.src.out-dir}">
+			<fileset dir="${web.src.src-dir}">
+				<patternset refid="resources"/>
+				<type type="file"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<property name="web.www-dir" value="${mod.dir}/web/www"/>
+	<target name="build.web" depends="compile.web.src" description="+ build web"/>
+
+	<!-- jar: uphea-web -->
+	<property name="uphea-web.jar" value="${dist.dir}/uphea-web-${prjVersion}.jar"/>
+
+	<target name="jar.uphea-web" depends="compile.web.src">
+		<mkdir dir="${dist.dir}"/>
+		<jar jarfile="${uphea-web.jar}" compress="true">
+			<manifest>
+				<attribute name="Debug-Info" value="on"/>
+				<attribute name="Release-Date" value="${TODAY}"/>
+				<attribute name="Implementation-Title" value="${prjName} uphea-web"/>
+				<attribute name="Implementation-Version" value="${prjVersion}"/>
+			</manifest>
+			<fileset dir="${web.src.out-dir}"/>
+		</jar>
+	</target>
+
+	<!-- war: uphea -->
+	
+	<property name="war.uphea" value="${dist.dir}/uphea.war"/>
+
+	<target name="war.uphea" depends="jar.uphea-web" description="  war: uphea">
+		<war destfile="${war.uphea}" needxmlfile="false">
+			<fileset dir="${web.www-dir}"/>
+			<lib file="${uphea-app.jar}"/>
+			<lib file="${uphea-web.jar}"/>
+			<lib refid="lib.jodd.fileset"/>
+			<lib refid="lib.log.fileset"/>
+			<lib refid="lib.hsqldb.fileset"/>
+			<lib refid="lib.mail.fileset"/>
+		</war>
+	</target>
+
+	<target name="dist.web" depends="war.uphea" description="+ dist module"/>
+
+	<target name="build" depends="build.app, build.web" description="* build all"/>
+
+	<target name="dist" depends="build, dist.app, dist.web" description="* dist all"/>
+
+	<target name="clean" description="* clean all">
+		<delete dir="${output.dir}"/>
+		<mkdir dir="${output.dir}"/>
+		<delete dir="${dist.dir}"/>
+		<mkdir dir="${dist.dir}"/>
+	</target>
+	<target name="help">
+		<echo>
+
+Module targets
+--------------
+build:	builds all modules
+dist:	creates distribution jars
+clean:	cleans out folders
+
+
+Project targets
+---------------
+clean:	cleans all outputs
+build:	compile all
+dist:	builds distribution war
+pack:	pack all
+
+		</echo>
+	</target>
+
+
+	<available file="${tomcat.zip}" property="tomcat.exist"/>
+
+	<target name="tomcat.download" unless="tomcat.exist">
+		<get src="${tomcat.url}" dest="${tomcat.zip}" verbose="true"/>
+	</target>
+
+	<target name="pack" depends="tomcat.download, dist" description="  pack">
+		<delete dir="${tmp.dir}"/>
+		<mkdir dir="${tmp.dir}"/>
+		<delete file="${dist}/uphea.zip"/>
+		
+		<!-- prepare tomcat -->
+		<unzip src="${tomcat.zip}" dest="${tmp.dir}"/>
+		<move file="${tmp.dir}/${tomcat.name}" tofile="${tmp.dir}/tomcat"/>
+		
+		<delete dir="${tmp.dir}/tomcat/webapps"/>
+		<mkdir dir="${tmp.dir}/tomcat/webapps"/>
+		
+		<!-- copy files -->
+		<copy file="${war.uphea}" todir="${tmp.dir}/tomcat/webapps" />
+		<move file="${tmp.dir}/tomcat/webapps/uphea.war" tofile="${tmp.dir}/tomcat/webapps/ROOT.war" />
+		<copy file="${etc.dir}/run-uphea.bat" todir="${tmp.dir}/" />
+		<copy file="${etc.dir}/run-uphea.sh" todir="${tmp.dir}/" />
+
+		<!-- configure tomcat -->
+		<copy todir="${tmp.dir}/tomcat/bin">
+			<fileset dir="${etc.dir}/tomcat/bin"/>
+		</copy>
+
+		<!-- working folder -->
+		<copy todir="${tmp.dir}/img">
+			<fileset dir="work/img"/>
+		</copy>
+
+		<!-- the end -->
+		<zip destfile="${dist.dir}/uphea.zip" basedir="${tmp.dir}"/>
+		<delete dir="${tmp.dir}"/>
+	</target>
+
+</project>

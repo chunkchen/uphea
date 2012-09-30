@@ -1,0 +1,53 @@
+# application properties
+#
+# values from properties files will be injected in the
+# app petite container, if bean name is matched.
+#
+# additionally, it is possible to refer to other properties
+# values using macros:s ${}.
+#
+# application properties can be split in several files
+# but, virtually, it will be considered as single set of properties.
+#
+
+upheaDir=${sys.uphea.dir}
+
+# scan
+
+# This will reduce the startup time, as reduce the number of
+# scanning jars to just 2 uphea jars and all jodd jars
+app-scan.includedJars=**/jodd*.jar,**/uphea*
+
+# database data
+jdbc.driverClassName=org.hsqldb.jdbcDriver
+jdbc.url=jdbc:hsqldb:file:${upheaDir}/db/upheadb
+jdbc.username=sa
+jdbc.password=sa!
+
+# database pool
+dbpool.driver=${jdbc.driverClassName}
+dbpool.url=${jdbc.url}
+dbpool.user=${jdbc.username}
+dbpool.password=${jdbc.password}
+dbpool.maxConnections=10
+dbpool.minConnections=5
+dbpool.waitIfBusy=true
+dbpool.validateConnection=true
+dbpool.validationQuery=select 1
+
+# db manager
+db.debug=true
+
+# db orm manager
+dboom.schemaName=PUBLIC
+dboom.tableNames.prefix=UP_
+dboom.tableNames.uppercase=true
+dboom.columnNames.uppercase=true
+
+# example how column alias type
+# can be set for all queries
+#dboom.defaultColumnAliasType=COLUMN_CODE
+
+# example how to turn on ID generation using Jodd
+#appDao.generatedKeys=false
+#jodd.joy.db.AppDao.generatedKeys=${appDao.generatedKeys}
