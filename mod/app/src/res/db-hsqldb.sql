@@ -177,68 +177,68 @@ INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed)
 		VALUES(1, 100,  '$2a$12$D2Z1B1gJ4j1ozxM928FZMOKTT1O2sc4aFTKlvQvnQVZkO3ShqkKSm', 'admin', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true)
 ;
 
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(2, 1,  'xxx', 'john@uphea.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'John Doe')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(2, 1,  'xxx', 'john@uphea.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'John Doe', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(3, 1,  'xxx', 'liz@uphea.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Liz Lemon')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(3, 1,  'xxx', 'liz@uphea.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Liz Lemon', 'F')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(4, 1,  'xxx', 'tj@uphea.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Tracy Jordan')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(4, 1,  'xxx', 'tj@uphea.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Tracy Jordan', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(5, 1,  'xxx', 'jane@jodd.org', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Just Jane')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(5, 1,  'xxx', 'jane@jodd.org', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Just Jane', 'F')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(6, 1,  'xxx', 'luk@sw.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'luke skywalker')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(6, 1,  'xxx', 'luk@sw.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'luke skywalker', 'M')
 ;
 INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
 		VALUES(7, 1,  'xxx', 'anakhin@sw.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Darth Vader')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(8, 1,  'xxx', 'indy@tomb.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Indiana Jones jr.')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(8, 1,  'xxx', 'indy@tomb.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Indiana Jones jr.', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(9, 1,  'xxx', 'bat@jodd.org', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Batman')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(9, 1,  'xxx', 'bat@jodd.org', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Batman', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(10, 1,  'xxx', 'joker@jodd.org', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Joker')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(10, 1,  'xxx', 'joker@jodd.org', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Joker', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(11, 1,  'xxx', 'green@lantern.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Green Lantern')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(11, 1,  'xxx', 'green@lantern.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Green Lantern', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(12, 1,  'xxx', 'shelly@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Dr. Sheldon Cooper')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(12, 1,  'xxx', 'shelly@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Dr. Sheldon Cooper', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(13, 1,  'xxx', 'leo@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Leonard Hofstadter')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(13, 1,  'xxx', 'leo@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Leonard Hofstadter', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(14, 1,  'xxx', 'lovetoy@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Howard Wolowitz')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(14, 1,  'xxx', 'lovetoy@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Howard Wolowitz', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(15, 1,  'xxx', 'raj@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Raj Koothrappali')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(15, 1,  'xxx', 'raj@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Raj Koothrappali', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(16, 1,  'xxx', 'comics@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Stuart')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(16, 1,  'xxx', 'comics@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Stuart', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(17, 1,  'xxx', 'bern@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Bernadette Rostenkowski')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(17, 1,  'xxx', 'bern@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Bernadette Rostenkowski', 'F')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(18, 1,  'xxx', 'aff@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Amy Farrah Fowler')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(18, 1,  'xxx', 'aff@tbbt.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Amy Farrah Fowler', 'F')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(19, 1,  'xxx', 'fla@sh.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Flash')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(19, 1,  'xxx', 'fla@sh.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Flash', 'M')
 ;
 INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
 		VALUES(20, 1,  'xxx', 'noone@no.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'NoOne')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(21, 1,  'xxx', 'corto@venice.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Corto Maltese')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(21, 1,  'xxx', 'corto@venice.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Corto Maltese', 'M')
 ;
-INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
-		VALUES(22, 1,  'xxx', 'igor@venice.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Igor')
+INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name, sex)
+		VALUES(22, 1,  'xxx', 'igor@venice.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Igor', 'M')
 ;
 INSERT INTO up_user(id, level, hashpw, email, since, last_login, confirmed, name)
 		VALUES(23, 1,  'xxx', 'jodd@venice.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true, 'Jodd')
