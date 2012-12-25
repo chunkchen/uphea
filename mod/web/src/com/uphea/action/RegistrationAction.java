@@ -10,7 +10,7 @@ import com.uphea.service.UserService;
 import jodd.joy.auth.AuthUtil;
 import jodd.joy.jtx.meta.ReadWriteTransaction;
 import jodd.joy.madvoc.action.AppAction;
-import jodd.joy.madvoc.meta.JsonAction;
+import jodd.joy.madvoc.meta.JSONAction;
 import jodd.joy.madvoc.meta.PostAction;
 import jodd.jtx.meta.Transaction;
 import jodd.madvoc.ScopeType;
@@ -129,7 +129,7 @@ public class RegistrationAction extends AppAction {
 	/**
 	 * Validates user before saves and during live validation.
 	 */
-	@JsonAction
+	@JSONAction
 	@Transaction
 	public String saveValidate() {
 		boolean valid = validateAction(Vtor.DEFAULT_PROFILE);

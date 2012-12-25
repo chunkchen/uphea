@@ -14,7 +14,7 @@ import com.uphea.service.UserService;
 import jodd.joy.auth.AuthUtil;
 import jodd.joy.jtx.meta.ReadWriteTransaction;
 import jodd.joy.madvoc.action.AppAction;
-import jodd.joy.madvoc.meta.JsonAction;
+import jodd.joy.madvoc.meta.JSONAction;
 import jodd.joy.madvoc.meta.PostAction;
 import jodd.jtx.meta.Transaction;
 import jodd.madvoc.ScopeType;
@@ -114,7 +114,7 @@ public class IndexAction extends AppAction implements Preparable {
 		user = userService.findUserById(user);
 	}
 
-	@JsonAction
+	@JSONAction
 	public String saveValidate() {
 		validateAction(Vtor.DEFAULT_PROFILE);
 		return VTOR_JSON;

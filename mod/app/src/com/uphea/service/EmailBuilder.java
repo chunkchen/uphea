@@ -9,6 +9,7 @@ import jodd.datetime.JDateTime;
 import jodd.io.FileUtil;
 import jodd.io.findfile.FindFile;
 import jodd.mail.Email;
+import jodd.mail.EmailAttachment;
 import jodd.petite.meta.PetiteBean;
 import jodd.petite.meta.PetiteInject;
 import jodd.util.StringUtil;
@@ -135,7 +136,7 @@ public class EmailBuilder {
 				content = StringUtil.replace(content, "src=\"", "src=\"cid:");
 				email.addHtml(content);
 			} else {
-				email.embedFile(f);
+				email.embed(EmailAttachment.attachment().file(f));
 			}
 		}
 	}
