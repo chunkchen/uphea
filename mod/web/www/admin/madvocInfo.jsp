@@ -19,10 +19,9 @@
 
 <%
 	MadvocConfig madvocConfig = (MadvocConfig) request.getAttribute("madvocConfig");
-	String cfg = BeanTool.attributesToString(madvocConfig);
 %>
 <pre>
-<%= cfg %>
+	<%=madvocConfig.toString()%>
 </pre>
 
 <h2>Actions</h2>
