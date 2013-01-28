@@ -1,4 +1,3 @@
-<%@ page import="jodd.bean.BeanTool" %>
 <%@ page import="jodd.madvoc.component.MadvocConfig" %>
 <%@taglib prefix="j" uri="/jodd" %>
 <%@taglib prefix="jfn" uri="/joddfn" %>
@@ -6,7 +5,7 @@
 <head>
 <style type="text/css">
 	h2 {margin-top:20px;}
-	table.adminTable   		{ border: 1px solid gray; font-size:0.7em; margin: 2px;}
+	table.adminTable   		{ border: 1px solid gray; font-size:0.6em; margin: 2px;}
 	table.adminTable td     { border-top: 1px solid gray; padding: 2px 10px;}
 	table.adminTable td a	{ text-decoration: none;}
 	table.adminTable th     { font-weight: bold; color: #eee; background-color:#333; font-size:1.1em; padding: 4px;}
@@ -21,7 +20,7 @@
 	MadvocConfig madvocConfig = (MadvocConfig) request.getAttribute("madvocConfig");
 %>
 <pre>
-	<%=madvocConfig.toString()%>
+<%= madvocConfig.toString() %>
 </pre>
 
 <h2>Actions</h2>
@@ -32,6 +31,7 @@ Total actions: ${jfn:length(actions)}.
 		<th>Init?</th>
 		<th>Action path</th>
 		<th>method</th>
+		<th>alias</th>
 		<th>Action</th>
 		<th>Interceptors</th>
 	</tr>
@@ -40,6 +40,7 @@ Total actions: ${jfn:length(actions)}.
 			<td>${jfn:test(cfg.initialized, "yes", "&nbsp;")}</td>
 			<td><a href="${cfg.actionPath}">${cfg.actionPath}</a></td>
 			<td>${cfg.actionMethod}</td>
+			<td>${jfn:replace(aliases[cfg.actionPath], "com.uphea.action.", ".")}</td>
 			<td>${jfn:replace(cfg.actionString, "com.uphea.action.", ".")}</td>
 			<td><j:iter items="${cfg.interceptorClasses}" var="iter">
 					${iter.simpleName}
