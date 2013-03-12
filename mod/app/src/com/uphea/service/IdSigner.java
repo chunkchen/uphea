@@ -20,6 +20,9 @@ public class IdSigner {
 	 */
 	public String encodeSignature(Long id) {
 		StringBuilder sb = new StringBuilder();
+		if (id == null) {
+			id = Long.valueOf(0);
+		}
 		sb.append(Base64.encodeToString(id.toString())).append(':');
 		sb.append(BCrypt.hashpw(secretKey, BCrypt.gensalt(saltRounds)));
 		return sb.toString();
