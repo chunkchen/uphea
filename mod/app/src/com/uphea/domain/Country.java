@@ -2,13 +2,12 @@ package com.uphea.domain;
 
 import jodd.db.oom.meta.DbColumn;
 import jodd.db.oom.meta.DbTable;
-import jodd.joy.db.Entity;
 
 /**
  * Country data.
  */
 @DbTable
-public class Country extends Entity {
+public class Country extends DbEntity {
 
 	@DbColumn
 	String name;

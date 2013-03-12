@@ -4,7 +4,6 @@ import com.uphea.domain.constraint.BirthYear;
 import jodd.datetime.JDateTime;
 import jodd.db.oom.meta.DbColumn;
 import jodd.db.oom.meta.DbTable;
-import jodd.joy.db.Entity;
 import jodd.joy.vtor.constraint.Email;
 import jodd.vtor.constraint.MaxLength;
 import jodd.vtor.constraint.NotBlank;
@@ -15,7 +14,7 @@ import jodd.vtor.constraint.NotNull;
  * it contains validation annotations as well.
  */
 @DbTable
-public class User extends Entity {
+public class User extends DbEntity {
 
 	@DbColumn
 	protected String hashpw;

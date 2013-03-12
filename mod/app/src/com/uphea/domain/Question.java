@@ -2,7 +2,6 @@ package com.uphea.domain;
 
 import jodd.db.oom.meta.DbColumn;
 import jodd.db.oom.meta.DbTable;
-import jodd.joy.db.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
  * {@link Country country) and list of {@link Answer answers}.
  */
 @DbTable
-public class Question extends Entity {
+public class Question extends DbEntity {
 
 	@DbColumn
 	Long countryId;

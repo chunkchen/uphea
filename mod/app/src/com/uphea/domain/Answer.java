@@ -2,13 +2,12 @@ package com.uphea.domain;
 
 import jodd.db.oom.meta.DbColumn;
 import jodd.db.oom.meta.DbTable;
-import jodd.joy.db.Entity;
 
 /**
  * Question answer.
  */
 @DbTable
-public class Answer extends Entity {
+public class Answer extends DbEntity {
 
 	@DbColumn
 	Long questionId;

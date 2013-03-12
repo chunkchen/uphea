@@ -3,13 +3,12 @@ package com.uphea.domain;
 import jodd.datetime.JDateTime;
 import jodd.db.oom.meta.DbColumn;
 import jodd.db.oom.meta.DbTable;
-import jodd.joy.db.Entity;
 
 /**
  * Email message.
  */
 @DbTable
-public class EmailMessage extends Entity {
+public class EmailMessage extends DbEntity {
 
 	@DbColumn
 	int template;

@@ -2,10 +2,9 @@ package com.uphea.domain;
 
 import jodd.db.oom.meta.DbColumn;
 import jodd.db.oom.meta.DbTable;
-import jodd.joy.db.Entity;
 
 @DbTable
-public class Favorites extends Entity {
+public class Favorites extends DbEntity {
 
 	@DbColumn
 	Long questionId;

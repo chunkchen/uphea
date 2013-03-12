@@ -3,13 +3,12 @@ package com.uphea.domain;
 import jodd.datetime.JDateTime;
 import jodd.db.oom.meta.DbColumn;
 import jodd.db.oom.meta.DbTable;
-import jodd.joy.db.Entity;
 
 /**
  * Single user vote for some answer.
  */
 @DbTable
-public class Vote extends Entity {
+public class Vote extends DbEntity {
 
 	@DbColumn
 	Long answerId;
