@@ -30,3 +30,6 @@ madvocConfig.createDefaultAliases=true
 
 # in production we can disable it
 jodd.madvoc.interceptor.EchoInterceptor.enabled=true
+
+#
+#automagicMadvocConfigurator.includedEntries=*aaa*

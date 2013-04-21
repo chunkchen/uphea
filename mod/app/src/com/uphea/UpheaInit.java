@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
  * This bean is inside of app container and (as any other Petite bean) can reach
  * all components that has to be started/initialized on application start.
  */
-@PetiteBean("appInit")
+@PetiteBean(AppCore.PETITE_INIT)
 public class UpheaInit implements AppInit {
 
 	private static final Logger log = LoggerFactory.getLogger(UpheaInit.class);
