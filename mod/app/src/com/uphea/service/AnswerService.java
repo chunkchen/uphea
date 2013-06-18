@@ -56,7 +56,7 @@ public class AnswerService {
 		DbOomQuery dbOom = query(sql("select $C{a.*} from $T{Answer a} join $T{Vote v} on $v.answerId=$a.id where $v.userId=:userId and $a.questionId=:questionId"));
 		dbOom.setLong("userId", user.getId());
 		dbOom.setLong("questionId", question.getId());
-		return dbOom.findOneAndClose(Answer.class);
+		return dbOom.findAndClose(Answer.class);
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class AnswerService {
 		DbOomQuery dbOom = query(sql("select $C{v.*} from $T{Vote v} join $T{Answer a} on $v.answerId=$a.id where $v.userId=:userId and $a.questionId=:questionId"));
 		dbOom.setLong("userId", user.getId());
 		dbOom.setLong("questionId", question.getId());
-		return dbOom.findOneAndClose(Vote.class);
+		return dbOom.findAndClose(Vote.class);
 	}
 
 

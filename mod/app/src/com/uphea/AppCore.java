@@ -3,6 +3,8 @@ package com.uphea;
 import com.uphea.domain.UserLevel;
 import com.uphea.type.UserLevelSqlType;
 import com.uphea.type.UserLevelTypeConverter;
+import jodd.db.DbSession;
+import jodd.db.connection.ConnectionProvider;
 import jodd.db.type.SqlTypeManager;
 import jodd.joy.core.DefaultAppCore;
 import jodd.petite.PetiteContainer;
@@ -96,5 +98,14 @@ public class AppCore extends DefaultAppCore {
 	protected void startDb() {
 		super.startDb();
 		//LoggablePreparedStatementFactory.getProxetta().setDebugFolder("d:\\");
+	}
+
+	/**
+	 * Creates new database session using DB session provider.
+	 * Usually, this method does not belong in AppCore, but in some
+	 * DbCore, as it is used for low level database access.
+	 */
+	public DbSession createDbSession() {
+		return new DbSession(connectionProvider);
 	}
 }

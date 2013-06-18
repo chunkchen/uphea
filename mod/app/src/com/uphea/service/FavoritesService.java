@@ -29,7 +29,7 @@ public class FavoritesService {
 		DbOomQuery dbOom = query(sql("select $C{f.*} from $T{Favorites f} where $f.questionId = :questionId and $f.userId = :userId"));
 		dbOom.setLong(1, question.getId());
 		dbOom.setLong(2, user.getId());
-		return (Favorites) dbOom.findOneAndClose();
+		return (Favorites) dbOom.findAndClose();
 	}
 
 	/**

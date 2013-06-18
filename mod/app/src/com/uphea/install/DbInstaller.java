@@ -37,13 +37,13 @@ public class DbInstaller {
 	 */
 	public boolean checkDb() {
 		log.debug("Check database.");
-		DbSession dbSession = new DbSession(AppCore.ref.getConnectionProvider());
+		DbSession dbSession = AppCore.ref.createDbSession();
 		DbQuery query = new DbQuery(dbSession, "select count(1) from up_user_level");
 		try {
 			query.execute();
 			log.debug("Database OK.");
 		    return true;
-		} catch (Exception ex) {
+		} catch (Exception ignored) {
 			return false;
 		} finally {
 			query.close();
@@ -87,7 +87,7 @@ public class DbInstaller {
 
 		String[] queries = StringUtil.splitc(sql, ";");
 
-		DbSession dbSession = new DbSession(AppCore.ref.getConnectionProvider());
+		DbSession dbSession = AppCore.ref.createDbSession();
 		for (int i = 0; i < queries.length; i++) {
 			String q = queries[i];
 			q = cleanSql(q);
@@ -126,7 +126,7 @@ public class DbInstaller {
 		JDateTime jdt = new JDateTime();
 		jdt.subDay(61);	// we have 62 pre-defined questions in total
 
-		DbSession dbSession = new DbSession(AppCore.ref.getConnectionProvider());
+		DbSession dbSession = AppCore.ref.createDbSession();
 		for (int i = 0; i < queries.length; i++) {
 			String q = queries[i];
 			q = cleanSql(q);
@@ -149,7 +149,7 @@ public class DbInstaller {
 
 
 	private void insertAnswers() {
-		DbSession dbSession = new DbSession(AppCore.ref.getConnectionProvider());
+		DbSession dbSession = AppCore.ref.createDbSession();
 
 		DbOomQuery dbQuery = new DbOomQuery(dbSession, DbSqlBuilder.sql("select $C{q.*} from $T{Question q} order by $q.id"));
 		List<Question> questions =  dbQuery.list();

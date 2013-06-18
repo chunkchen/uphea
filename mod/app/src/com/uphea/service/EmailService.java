@@ -71,7 +71,7 @@ public class EmailService {
 			q.setInteger(2, maxEmailsPerSession);
 		}
 
-		return q.listOneAndClose(EmailMessage.class);
+		return q.listAndClose(EmailMessage.class);
 	}
 
 

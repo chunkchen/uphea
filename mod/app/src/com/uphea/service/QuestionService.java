@@ -55,7 +55,7 @@ public class QuestionService {
 		dbOom.setMaxRows(1);
 		dbOom.setFetchSize(1);
 		dbOom.setInteger("date", date);
-		return dbOom.findOneAndClose(Question.class);
+		return dbOom.findAndClose(Question.class);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class QuestionService {
 		dbOom.setMaxRows(1);
 		dbOom.setFetchSize(1);
 		dbOom.setInteger("date", q.getDate());
-		return dbOom.findOneAndClose(Question.class);
+		return dbOom.findAndClose(Question.class);
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class QuestionService {
 		dbOom.setMaxRows(1);
 		dbOom.setFetchSize(1);
 		dbOom.setInteger("date", q.getDate());
-		return dbOom.findOneAndClose(Question.class);
+		return dbOom.findAndClose(Question.class);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class QuestionService {
 		DbOomQuery dbOom = query(sql("select $C{q.*} from $T{Question q} where $q.date < :date order by $q.date desc limit 0,:howMany"));
 		dbOom.setInteger("date", q.getDate());
 		dbOom.setInteger("howMany", howMany);
-		return dbOom.listOneAndClose(Question.class);
+		return dbOom.listAndClose(Question.class);
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class QuestionService {
 		dbOom.setMaxRows(1);
 		dbOom.setFetchSize(1);	
 		dbOom.setInteger("date", DateUtil.toIntDate(untilDate));
-		return dbOom.findOneAndClose(Question.class);
+		return dbOom.findAndClose(Question.class);
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class QuestionService {
 	public Question findAnswersQuestion(Long answerId) {
 		DbOomQuery dbOom = query(sql("select $C{q.*} from $T{Question q} join $T{Answer a} on $q.id=$a.questionId where $a.id=:answerId"));
 		dbOom.setLong("answerId", answerId);
-		return dbOom.findOne(Question.class);
+		return dbOom.find(Question.class);
 	}
 
 }
