@@ -16,7 +16,7 @@ public class AppMadvocConfig extends MadvocConfig {
 
 	public AppMadvocConfig() {
 		fileUploadFactory = new AdaptiveFileUploadFactory();
-		setRootPackageOf(IndexAction.class);
+		getRootPackages().addRootPackageOf(IndexAction.class);
 
 		// additional web config
 		CsrfShield.setTimeToLive(0);
