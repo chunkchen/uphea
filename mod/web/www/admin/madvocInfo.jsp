@@ -42,8 +42,8 @@ Total actions: ${jfn:length(actions)}.
 			<td>${cfg.actionMethod}</td>
 			<td>${jfn:replace(aliases[cfg.actionPath], "com.uphea.action.", ".")}</td>
 			<td>${jfn:replace(cfg.actionString, "com.uphea.action.", ".")}</td>
-			<td><j:iter items="${cfg.interceptorClasses}" var="iter">
-					${iter.simpleName}
+			<td><j:iter items="${cfg.interceptors}" var="iter">
+					${iter.getClass().simpleName},
 				</j:iter>
 			</td>
 		</tr>
@@ -82,7 +82,23 @@ Total interceptors: ${jfn:length(interceptors)}.
 			<td>${interceptor}</td>
 		</tr>
 	</j:iter>
+</table>
 
+
+<h2>Filters</h2>
+
+Total filters: ${jfn:length(filters)}.
+<table border="0" class="adminTable">
+	<tr>
+		<th>Init?</th>
+		<th>Interceptor</th>
+	</tr>
+	<j:iter items="${filters}" var="filter">
+		<tr>
+			<td>${jfn:test(filter.initialized, "yes", "&nbsp;")}</td>
+			<td>${filter}</td>
+		</tr>
+	</j:iter>
 </table>
 
 

@@ -1,2 +1,2 @@
-<%@ taglib prefix="jfn" uri="/joddfn" %>
-${jfn:initPage(pageContext)}
+<%@ page import="jodd.servlet.ServletUtil" %>
+<% ServletUtil.storeContextPath(pageContext, "CTX");%>

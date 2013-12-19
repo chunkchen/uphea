@@ -1,7 +1,8 @@
 <%@ taglib prefix="joy" uri="/jodd-joy" %>
 <%@ taglib prefix="j" uri="/jodd" %>
 <%@ taglib prefix="jfn" uri="/joddfn" %>
-${jfn:initPage(pageContext)}
+<%@ page import="jodd.servlet.ServletUtil" %>
+<% ServletUtil.storeContextPath(pageContext, "CTX");%>
 <!DOCTYPE html>
 <html>
 <head>

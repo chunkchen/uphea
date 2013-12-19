@@ -3,6 +3,7 @@ package com.uphea.interceptor;
 import jodd.bean.BeanUtil;
 import jodd.madvoc.ActionRequest;
 import jodd.madvoc.interceptor.ActionInterceptor;
+import jodd.madvoc.interceptor.BaseActionInterceptor;
 import nl.captcha.Captcha;
 
 import javax.servlet.http.HttpSession;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Interceptor that injects captcha instance from http session if exist.
  */
-public class CaptchaInterceptor extends ActionInterceptor {
+public class CaptchaInterceptor extends BaseActionInterceptor {
 
 	private static final String CAPTCHA_FIELD_NAME = "captcha";
 
