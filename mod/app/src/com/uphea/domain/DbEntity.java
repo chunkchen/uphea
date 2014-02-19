@@ -6,27 +6,10 @@ import jodd.joy.db.Entity;
 /**
  * Entity with ID column,
  */
-public abstract class DbEntity extends Entity {
+public abstract class DbEntity {
 
 	@DbId
 	protected Long id;
-
-	@Override
-	protected long getEntityId() {
-		if (id == null) {
-			return 0;
-		}
-		return id;
-	}
-
-	@Override
-	protected void setEntityId(long id) {
-		if (id == 0) {
-			this.id = null;
-		} else {
-			this.id = Long.valueOf(id);
-		}
-	}
 
 	public Long getId() {
 		return id;
@@ -34,5 +17,15 @@ public abstract class DbEntity extends Entity {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public boolean isPersistent() {
+		if (id == null) {
+			return false;
+		}
+		if (id.longValue() == 0) {
+			return false;
+		}
+		return true;
 	}
 }

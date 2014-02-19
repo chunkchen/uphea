@@ -1,5 +1,4 @@
 <%@ taglib prefix="j" uri="/jodd" %>
-<%@ taglib prefix="jfn" uri="/joddfn" %>
 <%@ taglib prefix="appfn" uri="/appfn" %>
 <ul>
 <j:iter items="${question.answers}" var="answer" status="s">

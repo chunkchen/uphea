@@ -25,9 +25,6 @@ madvocConfig.requestScopeInjectorConfig.ignoreEmptyRequestParams=false
 # empty parameters will be threaded as nulls
 madvocConfig.requestScopeInjectorConfig.treatEmptyParamsAsNull=true
 
-# create default aliases for all actions
-madvocConfig.createDefaultAliases=true
-
 # in production we can disable it
 jodd.madvoc.interceptor.EchoInterceptor.enabled=true
 

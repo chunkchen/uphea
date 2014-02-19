@@ -62,6 +62,10 @@ public class Format {
 		return jd.toString(DATE_FORMAT);
 	}
 
+	public static String fmtTime(JDateTime jd, String pattern) {
+		return jd.toString(pattern);
+	}
+
 	/**
 	 * Formats date.
 	 */

@@ -209,7 +209,7 @@ public class IndexAction extends AppAction {
 
 		User user = userSession.getUser();
 		if (user == null) {
-			return RAW + "undefined";
+			return "text:undefined";
 		}
 
 		boolean result = false;
@@ -220,7 +220,7 @@ public class IndexAction extends AppAction {
 			favoritesService.storeFavorite(question, user);
 			result = true;
 		}
-		return RAW + result;
+		return "text:" + result;
 	}
 
 }

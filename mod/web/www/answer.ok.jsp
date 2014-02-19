@@ -1,8 +1,7 @@
 <%@ taglib prefix="j" uri="/jodd" %>
-<%@ taglib prefix="jfn" uri="/joddfn" %>
 <%@ taglib prefix="appfn" uri="/appfn" %>
 <script type="text/javascript">
-var csrf = '${jfn:prepareCsrfToken(pageContext)}';
+var csrf = '${appfn:prepareCsrfToken(pageContext)}';
 var userVoteId = '${userVoteId}';
 </script>
 <ul>

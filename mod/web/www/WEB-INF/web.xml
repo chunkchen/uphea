@@ -22,9 +22,6 @@
 	<listener>
 		<listener-class>jodd.servlet.RequestContextListener</listener-class>
 	</listener>
-	<listener>
-		<listener-class>jodd.servlet.HttpSessionListenerBroadcaster</listener-class>
-	</listener>
 
 	<!-- remove session from url -->
 	<filter>

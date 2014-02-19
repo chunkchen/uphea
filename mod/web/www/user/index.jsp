@@ -1,6 +1,6 @@
 <%@ taglib prefix="appfn" uri="/appfn" %>
 <%@ taglib prefix="j" uri="/jodd" %>
-<%@ taglib prefix="jfn" uri="/joddfn" %>
+
 <html>
 <head>
 	<title>uphea | User profile</title>
@@ -47,7 +47,7 @@ function changePass(id) {
 	<div id="profile">
 	<p>
 		You are answering questions since <b>${appfn:fmtDate(user.since)}</b> and that is so great!
-		Your emails are coming to <b>${user.email}</b> account. This visit started at <b>${jfn:fmtTime(userSession.sessionStart, "DD.MML hh:mm")}</b>.<br/>
+		Your emails are coming to <b>${user.email}</b> account. This visit started at <b>${appfn:fmtTime(userSession.sessionStart, "DD.MML hh:mm")}</b>.<br/>
 	</p>
 
 	<p>
@@ -64,8 +64,8 @@ function changePass(id) {
 		<j:if test="${not empty user.country}">Your are living happily in <b>${user.country.name}</b>.&nbsp;</j:if>
 		<j:if test="${not empty user.birthYear}">And since year <b>${user.birthYear}</b> you haven't found a better site for questions.&nbsp;</j:if>
 
-		<j:if test="${jfn:contains(user.sex, 'M')}">Your liking of <b class="c-ora">uphea</b> means that you are dominant and clever <b>male</b>.</j:if>
-		<j:if test="${jfn:contains(user.sex, 'F')}">Your fancying <b class="c-ora">uphea</b> means that you are smart and beautiful <b>female</b>.</j:if>
+		<j:if test="${appfn:contains(user.sex, 'M')}">Your liking of <b class="c-ora">uphea</b> means that you are dominant and clever <b>male</b>.</j:if>
+		<j:if test="${appfn:contains(user.sex, 'F')}">Your fancying <b class="c-ora">uphea</b> means that you are smart and beautiful <b>female</b>.</j:if>
 	</p>
 	
 	<a href="#" onclick="edit(${user.id}); return false;" title="Edit user"><img src="/gfx/edit.png" alt="edit"/> edit personal data</a>
@@ -75,7 +75,7 @@ function changePass(id) {
 
 	<div style="margin-top:60px;">
 		<h2>Favorite questions</h2>
-		<j:if test="${jfn:length(favorites) == 0}">You don't have favorite questions... go and get some!</j:if>
+		<j:if test="${appfn:length(favorites) == 0}">You don't have favorite questions... go and get some!</j:if>
 		<j:iter items="${favorites}" var="fav">
 			<a href="${appfn:urlQuestion(fav)}">${appfn:txtPlain(fav.text)}</a> posted on ${appfn:fmtIntDate(fav.date)}<br/>			
 		</j:iter>

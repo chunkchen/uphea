@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%@ taglib prefix="jfn" uri="/joddfn" %>
 <%@ taglib prefix="appfn" uri="/appfn" %>
 <%@ taglib prefix="j" uri="/jodd" %>
 

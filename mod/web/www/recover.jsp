@@ -1,6 +1,6 @@
 <%@ taglib prefix="j" uri="/jodd" %>
-<%@ taglib prefix="jfn" uri="/joddfn" %>
 <%@ taglib prefix="joy" uri="/jodd-joy" %>
+<%@ taglib prefix="appfn" uri="/appfn" %>
 
 <html>
 <head>
@@ -12,7 +12,7 @@
 <j:ifelse test="${user != null}">
 <j:then>
 	<h1>New password</h1>
-<j:if test="${jfn:length(violations) > 0}">
+<j:if test="${appfn:length(violations) > 0}">
 	<div class="msg msg_error msg_show" style="width:600px">
 		<joy:violation-msg violation="${violations[0]}"/>
 	</div>

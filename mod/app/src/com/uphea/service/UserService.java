@@ -57,14 +57,14 @@ public class UserService  {
 	 * Finds user by id.
 	 */
 	public User findUserById(User user) {
-		return appDao.findById(user);
+		return findUserById(user.getId());
 	}
 
 	/**
 	 * Finds user by id.
 	 */
 	public User findUserById(Long userId) {
-		return appDao.findById(User.class, userId);
+		return appDao.findById(User.class, userId.longValue());
 	}
 
 	/**

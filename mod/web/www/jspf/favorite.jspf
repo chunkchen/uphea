@@ -1,5 +1,5 @@
-<%@ taglib prefix="jfn" uri="/joddfn" %>
 <%@ taglib prefix="joy" uri="/jodd-joy" %>
+<%@ taglib prefix="appfn" uri="/appfn" %>
 <joy:auth auth="true">
 <script type="text/javascript">
 function saveQuestionAsFavorite() {
@@ -22,6 +22,6 @@ function saveQuestionAsFavorite() {
 }
 </script>
 <div id="fav"><a href="#" onclick="saveQuestionAsFavorite(); return false;">
-	<div id="save" ${jfn:test(saved, 'class="on"', '')}>save question<br/>as favorite!</div></a>
+	<div id="save" ${appfn:test(saved, 'class="on"', '')}>save question<br/>as favorite!</div></a>
 </div>
 </joy:auth>

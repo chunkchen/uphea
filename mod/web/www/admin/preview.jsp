@@ -1,6 +1,5 @@
 <%@ taglib prefix="j" uri="/jodd" %>
 <%@ taglib prefix="appfn" uri="/appfn" %>
-<%@ taglib prefix="jfn" uri="/joddfn" %>
 <html>
 <body>
 
@@ -14,7 +13,7 @@
 	</div>
 
 	<div id="question">
-		<j:set name="len" scope="page" value="${jfn:length(question_text)}"/>
+		<j:set name="len" scope="page" value="${appfn:length(question_text)}"/>
 		<j:set name="size" scope="page" value="1"/>
 		<j:if test="${len > 100}">
 			<j:set name="size" scope="page" value="0.9"/>

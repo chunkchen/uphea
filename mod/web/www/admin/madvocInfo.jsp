@@ -1,6 +1,6 @@
 <%@ page import="jodd.madvoc.component.MadvocConfig" %>
 <%@taglib prefix="j" uri="/jodd" %>
-<%@taglib prefix="jfn" uri="/joddfn" %>
+<%@taglib prefix="appfn" uri="/appfn" %>
 <html>
 <head>
 <style type="text/css">
@@ -25,10 +25,9 @@
 
 <h2>Actions</h2>
 
-Total actions: ${jfn:length(actions)}.
+Total actions: ${appfn:length(actions)}.
 <table border="0" style="border: 1px solid #666;" class="adminTable">
 	<tr>
-		<th>Init?</th>
 		<th>Action path</th>
 		<th>method</th>
 		<th>alias</th>
@@ -37,11 +36,10 @@ Total actions: ${jfn:length(actions)}.
 	</tr>
 	<j:iter items="${actions}" var="cfg">
 		<tr>
-			<td>${jfn:test(cfg.initialized, "yes", "&nbsp;")}</td>
 			<td><a href="${cfg.actionPath}">${cfg.actionPath}</a></td>
 			<td>${cfg.actionMethod}</td>
-			<td>${jfn:replace(aliases[cfg.actionPath], "com.uphea.action.", ".")}</td>
-			<td>${jfn:replace(cfg.actionString, "com.uphea.action.", ".")}</td>
+			<td>${appfn:replace(aliases[cfg.actionPath], "com.uphea.action.", ".")}</td>
+			<td>${appfn:replace(cfg.actionString, "com.uphea.action.", ".")}</td>
 			<td><j:iter items="${cfg.interceptors}" var="iter">
 					${iter.getClass().simpleName},
 				</j:iter>
@@ -53,7 +51,7 @@ Total actions: ${jfn:length(actions)}.
 
 <h2>Results</h2>
 
-Total results: ${jfn:length(results)}.
+Total results: ${appfn:length(results)}.
 <table border="0" class="adminTable">
 	<tr>
 		<th>Type</th>
@@ -61,7 +59,7 @@ Total results: ${jfn:length(results)}.
 	</tr>
 	<j:iter items="${results}" var="result">
 		<tr>
-			<td style="text-align:right;font-weight:bold">${result.type}</td>
+			<td style="text-align:right;font-weight:bold">${result}</td>
 			<td>${result}</td>
 		</tr>
 	</j:iter>
@@ -70,15 +68,13 @@ Total results: ${jfn:length(results)}.
 
 <h2>Interceptors</h2>
 
-Total interceptors: ${jfn:length(interceptors)}.
+Total interceptors: ${appfn:length(interceptors)}.
 <table border="0" class="adminTable">
 	<tr>
-		<th>Init?</th>
 		<th>Interceptor</th>
 	</tr>
 	<j:iter items="${interceptors}" var="interceptor">
 		<tr>
-			<td>${jfn:test(interceptor.initialized, "yes", "&nbsp;")}</td>
 			<td>${interceptor}</td>
 		</tr>
 	</j:iter>
@@ -87,15 +83,13 @@ Total interceptors: ${jfn:length(interceptors)}.
 
 <h2>Filters</h2>
 
-Total filters: ${jfn:length(filters)}.
+Total filters: ${appfn:length(filters)}.
 <table border="0" class="adminTable">
 	<tr>
-		<th>Init?</th>
 		<th>Interceptor</th>
 	</tr>
 	<j:iter items="${filters}" var="filter">
 		<tr>
-			<td>${jfn:test(filter.initialized, "yes", "&nbsp;")}</td>
 			<td>${filter}</td>
 		</tr>
 	</j:iter>

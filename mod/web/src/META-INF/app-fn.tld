@@ -35,6 +35,12 @@
 	</function>
 
 	<function>
+		<name>fmtTime</name>
+		<function-class>com.uphea.jsp.Format</function-class>
+		<function-signature>java.lang.String fmtTime(jodd.datetime.JDateTime,java.lang.String)</function-signature>
+	</function>
+
+	<function>
 		<name>fmtIntDate</name>
 		<function-class>com.uphea.jsp.Format</function-class>
 		<function-signature>java.lang.String fmtIntDate(int)</function-signature>
@@ -50,6 +56,36 @@
 		<name>urlQuestion</name>
 		<function-class>com.uphea.jsp.UrlFunctions</function-class>
 		<function-signature>java.lang.String urlQuestionForDate(com.uphea.domain.Question)</function-signature>
+	</function>
+
+	<function>
+		<name>length</name>
+		<function-class>jodd.util.ObjectUtil</function-class>
+		<function-signature>int length(java.lang.Object)</function-signature>
+	</function>
+
+	<function>
+		<name>contains</name>
+		<function-class>jodd.util.ObjectUtil</function-class>
+		<function-signature>boolean containsElement(java.lang.Object,java.lang.Object)</function-signature>
+	</function>
+
+	<function>
+		<name>prepareCsrfToken</name>
+		<function-class>jodd.servlet.CsrfShield</function-class>
+		<function-signature>java.lang.String prepareCsrfToken(javax.servlet.jsp.PageContext)</function-signature>
+	</function>
+
+	<function>
+		<name>replace</name>
+		<function-class>jodd.util.StringUtil</function-class>
+		<function-signature>java.lang.String replace(java.lang.String,java.lang.String,java.lang.String)</function-signature>
+	</function>
+
+	<function>
+		<name>test</name>
+		<function-class>com.uphea.jsp.Fn</function-class>
+		<function-signature>java.lang.String test(java.lang.Object,java.lang.String,java.lang.String)</function-signature>
 	</function>
 
 </taglib>

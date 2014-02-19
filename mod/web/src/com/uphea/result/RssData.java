@@ -1,12 +1,13 @@
 package com.uphea.result;
 
 import com.uphea.rss.Feed;
+import jodd.madvoc.meta.RenderWith;
 
 /**
  * Simple wrapper over RSS feed that is used as result type of Madvoc actions.
  */
+@RenderWith(RssResult.class)
 public class RssData {
-	private static final String RESULT = RssResult.NAME + ':';
 
 	private final Feed feed;
 
@@ -18,11 +19,4 @@ public class RssData {
 		return feed;
 	}
 
-	/**
-	 * Returns Rss result type.
-	 */
-	@Override
-	public String toString() {
-		return RESULT;
-	}
 }
