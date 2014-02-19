@@ -44,6 +44,7 @@ war_libs = '''
 	lib.log
 	lib.hsqldb
 	lib.mail
+	lib.war
 '''
 	
 artifact_jar('uphea-web', 'web.src')

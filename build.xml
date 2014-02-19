@@ -240,6 +240,7 @@
 			<lib refid="lib.log.fileset"/>
 			<lib refid="lib.hsqldb.fileset"/>
 			<lib refid="lib.mail.fileset"/>
+			<lib refid="lib.web.fileset"/>
 		</war>
 	</target>
 
