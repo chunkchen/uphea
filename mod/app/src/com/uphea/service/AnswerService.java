@@ -39,12 +39,11 @@ public class AnswerService {
 	 * chunks. Here we also use <code>DbEntitySql#findForeign</code> to
 	 * generate selecting foreign entity for given parent entity.
 	 * <p>
-	 * However, it is recommended to use template sql instead, since it
-	 * is more readable.
+	 * However, it is highly recommended to use template sql instead!!!
 	 */
 	public void loadAnswers(Question q) {
 		DbSqlBuilder dbb = DbEntitySql.findForeign(Answer.class, q);
-		dbb._(" order by ").refId("Answer");
+		dbb._(" order by ").refId("Answer_");
 		List<Answer> answers = query(dbb).listAndClose(Answer.class);
 		q.setAnswers(answers);
 	}
