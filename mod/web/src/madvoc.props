@@ -27,6 +27,6 @@ madvocConfig.requestScopeInjectorConfig.treatEmptyParamsAsNull=true
 
 # in production we can disable it
 jodd.madvoc.interceptor.EchoInterceptor.enabled=true
-
+jodd.madvoc.interceptor.PreparableInterceptor.injectIdsFromRequestEnabled=true
 #
 #automagicMadvocConfigurator.includedEntries=*aaa*

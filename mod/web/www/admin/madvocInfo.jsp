@@ -5,8 +5,8 @@
 <head>
 <style type="text/css">
 	h2 {margin-top:20px;}
-	table.adminTable   		{ border: 1px solid gray; font-size:0.6em; margin: 2px;}
-	table.adminTable td     { border-top: 1px solid gray; padding: 2px 10px;}
+	table.adminTable   		{ border: 1px solid gray; font-size:10px; margin: 2px; line-height: 14px;}
+	table.adminTable td     { border-top: 1px solid gray; padding: 2px 10px; border-right: 1px dotted #ddd;}
 	table.adminTable td a	{ text-decoration: none;}
 	table.adminTable th     { font-weight: bold; color: #eee; background-color:#333; font-size:1.1em; padding: 4px;}
 </style>
@@ -41,7 +41,7 @@ Total actions: ${appfn:length(actions)}.
 			<td>${appfn:replace(aliases[cfg.actionPath], "com.uphea.action.", ".")}</td>
 			<td>${appfn:replace(cfg.actionString, "com.uphea.action.", ".")}</td>
 			<td><j:iter items="${cfg.interceptors}" var="iter">
-					${iter.getClass().simpleName},
+					${iter.getClass().simpleName}<br>
 				</j:iter>
 			</td>
 		</tr>
@@ -86,7 +86,7 @@ Total interceptors: ${appfn:length(interceptors)}.
 Total filters: ${appfn:length(filters)}.
 <table border="0" class="adminTable">
 	<tr>
-		<th>Interceptor</th>
+		<th>Filters</th>
 	</tr>
 	<j:iter items="${filters}" var="filter">
 		<tr>
