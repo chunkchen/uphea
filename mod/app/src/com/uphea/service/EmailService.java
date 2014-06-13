@@ -71,7 +71,7 @@ public class EmailService {
 			q.setInteger(2, maxEmailsPerSession);
 		}
 
-		return q.listAndClose(EmailMessage.class);
+		return q.autoClose().list(EmailMessage.class);
 	}
 
 
@@ -80,7 +80,7 @@ public class EmailService {
 	 */
 	public long countEmails() {
 		DbOomQuery q = query(sql("select count(1) from $T{EmailMessage email}"));
-		return q.executeCountAndClose();
+		return q.autoClose().executeCount();
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class EmailService {
 	public long countPendingEmails() {
 		DbOomQuery q = query(sql("select count(1) from $T{EmailMessage email} where $email.repeatCount < :maxTake"));
 		q.setInteger(1, maxRepeatsOnError);
-		return q.executeCountAndClose();
+		return q.autoClose().executeCount();
 	}
 	/**
 	 * Deletes sent message.
@@ -106,7 +106,7 @@ public class EmailService {
 		emailMessage.incrementRepeatCount();
 		q.setInteger("take", emailMessage.getRepeatCount());
 		q.setLong("id", emailMessage.getId());
-		q.executeUpdateAndClose();
+		q.autoClose().executeUpdate();
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class EmailService {
 	 */
 	public void enableAllEmails() {
 		DbOomQuery q = query(sql("update $T{EmailMessage email} set $email.repeatCount=0"));
-		q.executeUpdateAndClose();
+		q.autoClose().executeUpdate();
 	}
 
 	/**
@@ -123,7 +123,7 @@ public class EmailService {
 	public void enableEmail(EmailMessage emailMessage){
 		DbOomQuery q = query(sql("update $T{EmailMessage email} set $email.repeatCount=0 where $email.id=:id"));
 		q.setLong("id", emailMessage.getId());
-		q.executeUpdateAndClose();
+		q.autoClose().executeUpdate();
 	}
 
 }

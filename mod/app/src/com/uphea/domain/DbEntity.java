@@ -1,7 +1,6 @@
 package com.uphea.domain;
 
 import jodd.db.oom.meta.DbId;
-import jodd.joy.db.Entity;
 
 /**
  * Entity with ID column,
@@ -16,6 +15,9 @@ public abstract class DbEntity {
 	}
 
 	public void setId(Long id) {
+		if (id != null && id.longValue() == 0) {
+			id = null;
+		}
 		this.id = id;
 	}
 

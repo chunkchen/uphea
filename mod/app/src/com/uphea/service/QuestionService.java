@@ -55,7 +55,7 @@ public class QuestionService {
 		dbOom.setMaxRows(1);
 		dbOom.setFetchSize(1);
 		dbOom.setInteger("date", date);
-		return dbOom.findAndClose(Question.class);
+		return dbOom.autoClose().find(Question.class);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class QuestionService {
 		dbOom.setMaxRows(1);
 		dbOom.setFetchSize(1);
 		dbOom.setInteger("date", q.getDate());
-		return dbOom.findAndClose(Question.class);
+		return dbOom.autoClose().find(Question.class);
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class QuestionService {
 		dbOom.setMaxRows(1);
 		dbOom.setFetchSize(1);
 		dbOom.setInteger("date", q.getDate());
-		return dbOom.findAndClose(Question.class);
+		return dbOom.autoClose().find(Question.class);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class QuestionService {
 		DbOomQuery dbOom = query(sql("select $C{q.*} from $T{Question q} where $q.date < :date order by $q.date desc limit 0,:howMany"));
 		dbOom.setInteger("date", q.getDate());
 		dbOom.setInteger("howMany", howMany);
-		return dbOom.listAndClose(Question.class);
+		return dbOom.autoClose().list(Question.class);
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class QuestionService {
 		dbOom.setMaxRows(1);
 		dbOom.setFetchSize(1);	
 		dbOom.setInteger("date", DateUtil.toIntDate(untilDate));
-		return dbOom.findAndClose(Question.class);
+		return dbOom.autoClose().find(Question.class);
 	}
 
 	/**

@@ -11,7 +11,7 @@
 madvocConfig.actionAnnotations=\
 		jodd.madvoc.meta.Action,\
 		jodd.joy.madvoc.meta.PostAction,\
-		jodd.joy.madvoc.meta.JSONAction,\
+		com.uphea.meta.JSONAction,\
 		com.uphea.meta.PopupAction
 
 # list of default interceptors

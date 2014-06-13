@@ -29,7 +29,7 @@ public class FavoritesService {
 		DbOomQuery dbOom = query(sql("select $C{f.*} from $T{Favorites f} where $f.questionId = :questionId and $f.userId = :userId"));
 		dbOom.setLong(1, question.getId());
 		dbOom.setLong(2, user.getId());
-		return (Favorites) dbOom.findAndClose();
+		return (Favorites) dbOom.autoClose().find();
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class FavoritesService {
 	public List<Question> findUserFavorites(User user){
 		DbOomQuery dbOom = query(sql("select $C{q.*} from $T{Question q} join $T{Favorites f} on $q.id = $f.questionId where $f.userId = :userId order by $q.date desc"));
 		dbOom.setInteger("userId", user.getId());
-		return dbOom.listAndClose(Question.class);
+		return dbOom.autoClose().list(Question.class);
 	}
 
 }

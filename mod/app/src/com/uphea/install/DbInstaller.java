@@ -164,7 +164,7 @@ public class DbInstaller {
 			
 			for (Answer a : answers) {
 				dbQuery = new DbOomQuery(dbSession, DbEntitySql.updateColumn(a, "votes", Integer.valueOf(MathUtil.randomInt(10, 50))));
-				dbQuery.executeUpdateAndClose();
+				dbQuery.autoClose().executeUpdate();
 			}
 		}
 	}

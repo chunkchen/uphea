@@ -44,7 +44,7 @@ public class AnswerService {
 	public void loadAnswers(Question q) {
 		DbSqlBuilder dbb = DbEntitySql.findForeign(Answer.class, q);
 		dbb._(" order by ").refId("Answer_");
-		List<Answer> answers = query(dbb).listAndClose(Answer.class);
+		List<Answer> answers = query(dbb).autoClose().list(Answer.class);
 		q.setAnswers(answers);
 	}
 
@@ -55,7 +55,7 @@ public class AnswerService {
 		DbOomQuery dbOom = query(sql("select $C{a.*} from $T{Answer a} join $T{Vote v} on $v.answerId=$a.id where $v.userId=:userId and $a.questionId=:questionId"));
 		dbOom.setLong("userId", user.getId());
 		dbOom.setLong("questionId", question.getId());
-		return dbOom.findAndClose(Answer.class);
+		return dbOom.autoClose().find(Answer.class);
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class AnswerService {
 		char operation = increment ? '+' : '-';
 		DbOomQuery dbOom = query(sql("update $T{Answer a} set $a.votes = $a.votes " + operation + " 1 where $a.id = :id"));
 		dbOom.setLong(1, answer.getId());
-		dbOom.executeUpdateAndClose();
+		dbOom.autoClose().executeUpdate();
 		if (increment) {
 			answer.incrementVotes();
 		} else {
@@ -101,7 +101,7 @@ public class AnswerService {
 		DbOomQuery dbOom = query(sql("select $C{v.*} from $T{Vote v} join $T{Answer a} on $v.answerId=$a.id where $v.userId=:userId and $a.questionId=:questionId"));
 		dbOom.setLong("userId", user.getId());
 		dbOom.setLong("questionId", question.getId());
-		return dbOom.findAndClose(Vote.class);
+		return dbOom.autoClose().find(Vote.class);
 	}
 
 
@@ -141,7 +141,7 @@ public class AnswerService {
 	public long countUserVotes(User user) {
 		DbOomQuery dbOom = query(sql("select count(1) from $T{Vote v} where $v.userId = :userId"));
 		dbOom.setInteger("userId", user.getId());
-		return dbOom.executeCountAndClose();
+		return dbOom.autoClose().executeCount();
 	}
 
 }
